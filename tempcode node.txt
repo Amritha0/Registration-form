@@ -1,0 +1,40 @@
+const uri = "mongodb+srv://<user>:<password>@<cluster-url>?w=majority";
+const uri = "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.2"
+
+JQuery 3.x
+uncompressed:
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+mini:
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+const validator = require("email-validator");
+if (validator.validate(body.uemail)){
+        console.log("Ok email.");
+    }
+
+const { Redirect } = require('twilio/lib/twiml/VoiceResponse');
+
+db.collection("coll02").find({}, {projection: {_id:0, name:0, phone:0, email: body.uemail, password: body.upassword}}).toArray(function (err,res) {
+    if (err) throw err; 
+    console.log(res);
+    db.close();
+});
+
+var result = db.collection("coll02").find({"email":body.uemail,"password":body.upassword}).toArray(function(err, res) {
+        if (err) throw err;
+        console.log("Data found.");
+        db.close();
+    });
+
+console.log(typeof(ans));
+
+console.log(ans[0].name);
+bodyList = [ans[0].name,ans[0].phone,ans[0].email,ans[0].password];
+console.log("bodyList: "+bodyList);
+
+const result = db.collection("coll02").find({"email":req.body.uemail,"password":req.body.upassword}).toArray();
+
+console.log(req.body.uname, req.body.uphone, req.body.uemail, req.body.upassword);
+
+await client.close();
